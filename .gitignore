@@ -1,0 +1,35 @@
+00_old
+# Bytecode generado
+*.class
+
+# Archivos generados por Maven
+/target/
+
+# Archivos de configuración de IDE
+/.idea/
+/*.iml
+/.project
+/.classpath
+/.settings/
+
+# Archivos generados por sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Archivos de empaquetado
+*.jar
+*.war
+*.ear
+
+# Archivos específicos de OS
+*.swp
+*.swo
+
+# Archivos de configuración del entorno
+.env
+
+# Dependencias descargadas
+/.mvn/
