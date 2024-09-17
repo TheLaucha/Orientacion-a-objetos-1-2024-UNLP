@@ -2,11 +2,12 @@ package org.example;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Presupuesto {
     private LocalDate fecha;
     private String cliente;
-    private ArrayList<Item> items = new ArrayList<Item>();
+    private List<Item> items = new ArrayList<Item>();
 
     public Presupuesto(String cliente) {
         this.cliente = cliente;
