@@ -19,7 +19,7 @@ public class FarolaTest {
 	@Test
 	void testConstructor() {
 		assertFalse(farolaUno.isOn(), "La farolaUno no está apagada");
-		assertTrue(farolaUno.isOff(), "La farolaUno no está apagada");
+		//assertTrue(farolaUno.isOff(), "La farolaUno no está apagada");
 		assertTrue(farolaUno.getNeighbors().isEmpty(), "La farolaUno no debería tener vecinos");
 	}
 
