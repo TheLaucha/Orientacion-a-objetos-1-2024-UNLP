@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a7f37464-85eb-4a02-b20b-2245aa6742f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../semana_4/ejercicio7/src/main/java/ar/edu/unlp/info/oo1/redAlumbrado/Farola.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../semana_4/ejercicio7/src/main/java/ar/edu/unlp/info/oo1/redAlumbrado/Farola.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2mq05cydcrJMVvJ9at9LwHlC83t" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.CuentaTest.testMontos.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lespinillo/Desktop/Orientacion-a-objetos-1-2024-UNLP/semana_5/ejercicio9"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="CuentaTest.testMontos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ejercicio9" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ar.edu.info.unlp.ejercicio9.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ar.edu.info.unlp.ejercicio9" />
+      <option name="MAIN_CLASS_NAME" value="ar.edu.info.unlp.ejercicio9.CuentaTest" />
+      <option name="METHOD_NAME" value="testMontos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CuentaTest.testMontos" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7f37464-85eb-4a02-b20b-2245aa6742f4" name="Changes" comment="" />
+      <created>1727788617641</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727788617641</updated>
+    </task>
+    <servers />
+  </component>
+</project>

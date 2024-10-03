@@ -15,8 +15,6 @@ public class Farola {
     public void pairWithNeighbor(Farola otraFarola){
         if(!this.vecinas.contains(otraFarola)){
             this.vecinas.add(otraFarola);
-            // Aca podria usar tambien otraFarola.getNeighbors().add(this)
-            // Pero estaria modificando la lista de forma externa.
             otraFarola.pairWithNeighbor(this);
         }
     }
@@ -28,29 +26,19 @@ public class Farola {
     public void turnOn(){
         if(!this.estaEncendida){
             this.estaEncendida = true;
-            turnNeighbors();
+            this.vecinas.stream().forEach(v -> v.turnOn());
         }
     }
 
     public void turnOff(){
         if(this.estaEncendida){
             this.estaEncendida = false;
-            turnNeighbors();
+            this.vecinas.stream().forEach(v -> v.turnOff());
         }
     }
 
     public boolean isOn(){
         return this.estaEncendida;
-    }
-
-    private void turnNeighbors(){
-        for (Farola f: vecinas){
-            if (this.estaEncendida) {
-                f.turnOn();
-            } else {
-                f.turnOff();
-            }
-        }
     }
 
 }
