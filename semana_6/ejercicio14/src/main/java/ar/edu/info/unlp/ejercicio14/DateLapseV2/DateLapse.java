@@ -1,13 +1,15 @@
-package ar.edu.info.unlp.ejercicio14;
+package ar.edu.info.unlp.ejercicio14.DateLapseV2;
+
+import ar.edu.info.unlp.ejercicio14.DateLapseInterface;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class DateLapseB implements DateLapseInterface {
+public class DateLapse implements DateLapseInterface {
     private LocalDate from;
     private int sizeInDays;
 
-    public DateLapseB(LocalDate from, int sizeInDays){
+    public DateLapse(LocalDate from, int sizeInDays){
         this.from = from;
         this.sizeInDays = sizeInDays;
     }

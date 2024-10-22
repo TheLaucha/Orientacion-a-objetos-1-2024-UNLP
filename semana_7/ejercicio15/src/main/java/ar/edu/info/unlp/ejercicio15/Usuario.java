@@ -1,16 +1,18 @@
 package ar.edu.info.unlp.ejercicio15;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
     private String nombre;
     private String domicilio;
     private List<Consumo> consumos;
-    private Tarifario tarifario;
 
-    public Usuario(){
-        this.tarifario = new Tarifario();
+    public Usuario(String nombre, String domicilio){
+        this.nombre = nombre;
+        this.domicilio = domicilio;
+        this.consumos = new ArrayList<Consumo>();
     }
 
     public String getNombre(){
@@ -25,20 +27,20 @@ public class Usuario {
         this.consumos.add(consumo);
     }
 
-    public double costoDeConsumoEnergiaActiva(){
-        return this.consumos.getLast().getConsumoEnergiaActiva() * this.tarifario.getPrecioKWH();
+    public double costoDeConsumoEnergiaActiva(Tarifario tarifario){
+        return this.consumos.get(this.consumos.size()-1).getConsumoEnergiaActiva() * tarifario.getPrecioKWH();
     }
 
     public boolean tieneBonificacion(){
-        return this.consumos.getLast().bonificacion();
+        return this.consumos.get(this.consumos.size()-1).bonificacion();
     }
 
-    public Factura emitirFactura(){
-        double montoFinal = this.costoDeConsumoEnergiaActiva();
+    public Factura emitirFactura(Tarifario tarifario){
+        double montoFinal = this.costoDeConsumoEnergiaActiva(tarifario);
         double bonificacion = 0;
 
         if(this.tieneBonificacion()){
-            bonificacion = this.costoDeConsumoEnergiaActiva() * 0.1;
+            bonificacion = montoFinal * 0.1;
             montoFinal -= bonificacion;
         }
 

@@ -1,5 +1,6 @@
 package ar.edu.info.unlp.ejercicio14;
 
+import ar.edu.info.unlp.ejercicio14.DateLapseV2.DateLapse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,57 +9,48 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DateLapseTest {
-    DateLapse dateA;
-    DateLapseB dateB;
-    LocalDate from;
-    LocalDate to;
+    private DateLapseInterface lapso;
+    private DateLapseInterface lapso2;
+    private DateLapseInterface lapso3;
+    private LocalDate other;
+    private LocalDate other2;
 
     @BeforeEach
-    void setUp(){
-        from = LocalDate.of(1979,12,15);
-        to = LocalDate.of(2032,12,15);
-        dateA = new DateLapse(from, to);
-        dateB = new DateLapseB(from, 19359);
+    void setUp() throws Exception {
+		this.lapso = new ar.edu.info.unlp.ejercicio14.DateLapse(LocalDate.of(2022, 10, 5), LocalDate.of(2022, 10, 15));
+		this.lapso2 = new ar.edu.info.unlp.ejercicio14.DateLapse (LocalDate.of(2022, 10, 5), LocalDate.of(2022, 10, 5));
+		this.lapso3 = new ar.edu.info.unlp.ejercicio14.DateLapse (LocalDate.of(2022, 10, 15), LocalDate.of(2022, 10, 5));
+        /*
+        this.lapso = new DateLapse(LocalDate.of(2022, 10, 5), 10);
+        this.lapso2 = new DateLapse (LocalDate.of(2022, 10, 5), 0);
+        this.lapso3 = new DateLapse (LocalDate.of(2022, 10, 15), -10);
+        */
+        this.other = LocalDate.of(2022,10, 7);
+        this.other2 = LocalDate.of(2022,10, 3);
     }
 
     @Test
-    void getFrom() {
-        assertEquals(from, dateA.getFrom());
-        assertEquals(from, dateB.getFrom());
+    void testConstructor() {
+        assertEquals(5,this.lapso.getFrom().getDayOfMonth());
+        assertEquals(10,this.lapso.getFrom().getMonthValue());
+        assertEquals(2022,this.lapso.getFrom().getYear());
+        assertEquals(15,this.lapso.getTo().getDayOfMonth());
+        assertEquals(10,this.lapso.getTo().getMonthValue());
+        assertEquals(2022,this.lapso.getTo().getYear());
     }
 
     @Test
-    void getTo() {
-        assertEquals(to, dateA.getTo());
-        assertEquals(to, dateB.getTo());
+    void testSizeInDays() {
+        assertEquals(10,this.lapso.sizeInDays());
+        assertEquals(0,this.lapso2.sizeInDays());
+        assertEquals(-10,this.lapso3.sizeInDays());
     }
 
     @Test
-    void sizeInDays() {
-        assertEquals(19359, dateA.sizeInDays());
-        assertEquals(19359, dateB.sizeInDays());
-        // Nuevas fechas
-        from = LocalDate.of(2024,1,1);
-        to = LocalDate.of(2024,2,1);
-        DateLapse date2 = new DateLapse(from, to);
-        assertEquals(31, date2.sizeInDays());
-        // Mismas fechas
-        from = LocalDate.of(2024,1,1);
-        to = LocalDate.of(2024,1,1);
-        DateLapse date3 = new DateLapse(from, to);
-        assertEquals(0, date3.sizeInDays());
-    }
-
-    @Test
-    void includesDate() {
-        LocalDate hoy = LocalDate.now();
-        assertTrue(dateA.includesDate(hoy));
-        assertTrue(dateB.includesDate(hoy));
-        LocalDate inicio = LocalDate.of(1979,12,15);
-        LocalDate fin = LocalDate.of(2032,12,15);
-        assertTrue(dateA.includesDate(inicio));
-        assertTrue(dateA.includesDate(fin));
-        assertTrue(dateB.includesDate(inicio));
-        assertTrue(dateB.includesDate(fin));
+    void testIncludesDate() {
+        assertTrue(this.lapso.includesDate(other));
+        assertFalse(this.lapso.includesDate(other2));
+        assertFalse(this.lapso2.includesDate(other));
+        assertFalse(this.lapso3.includesDate(other));
     }
 }

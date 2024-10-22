@@ -14,7 +14,7 @@ public class Consumo {
     }
 
     public double factorDePotencia(){
-        double fpe = this.consumoEnergiaActiva / Math.sqrt(Math.pow(this.consumoEnergiaActiva, 2) + Math.pow(this.consumoEnergiaReactiva, 2));
+        return this.consumoEnergiaActiva / Math.sqrt(Math.pow(this.consumoEnergiaActiva, 2) + Math.pow(this.consumoEnergiaReactiva, 2));
     }
 
     public boolean bonificacion(){
