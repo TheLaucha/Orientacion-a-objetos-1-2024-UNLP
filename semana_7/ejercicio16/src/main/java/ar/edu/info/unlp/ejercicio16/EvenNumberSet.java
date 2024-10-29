@@ -5,21 +5,21 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class EvenNumberSet implements Set<Integer> {
+public class EvenNumberSet extends HashSet<Integer> {
     private Set<Integer> setInterno;
     // Si quisiera mantener el orden en el que se ingresaron los numeros podria utilizar LinkedHashSet
     // Tambien puedo utilizar un TreeSet si quisiera que los elementos esten ordenados de forma ascendente o descendente.
     
 
     public EvenNumberSet(){
-        setInterno = new HashSet<>();
+        // setInterno = new HashSet<>();
     }
 
     // RE-IMPLEMENTADOS
     @Override
     public boolean add(Integer numero) {
         if(numero % 2 == 0){
-            return setInterno.add(numero);
+            return super.add(numero);
         }
         return false;
     }
@@ -27,12 +27,12 @@ public class EvenNumberSet implements Set<Integer> {
     @Override
     public boolean addAll(Collection<? extends Integer> c) {
         if (c.stream().allMatch(i -> i%2 == 0)){
-            return setInterno.addAll(c);
+            return super.addAll(c);
         }
         return false;
     }
 
-
+    /*
     // DELEGADOS AL setInterno
     @Override
     public int size() {
@@ -88,4 +88,5 @@ public class EvenNumberSet implements Set<Integer> {
     public void clear() {
         setInterno.clear();
     }
+    */
 }
